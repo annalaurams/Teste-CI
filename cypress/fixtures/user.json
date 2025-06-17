@@ -1,0 +1,27 @@
+{
+  "basic": {
+    "name": "Maria",
+    "email": "sm.annalaura@gmail.com",
+    "password": "123456",
+    "whatsapp": "37988327640",
+    "cpf": "02349471608",
+    "secondary_phone": "37888888888",
+    "health_insurance": "Unimed",
+    "date_of_birth": "10/10/2000",
+    "birthday": "2000/10/10",
+    "gender": "Feminino",
+    "occupation": "Desenvolvedora",
+    "emergency_contact": "Mãe",
+    "emergency_phone": "37111111111",
+    "zip_code": "3504024-002",
+    "country": "Brasil",
+    "number": "100",
+    "complement": "Prédio",
+    "namePatient": "JOAO",
+    "tags1": "VEGETARIANO",
+    "tags2": "ASMATICO",
+    "neighborhood": "Centro",
+    "city": "Divinópolis",
+    "state": "MG"
+  }
+}
