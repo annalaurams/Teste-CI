@@ -5,5 +5,6 @@ describe('Logout Maia', () => {
       cy.login(user);  
     });
     cy.logout(); 
+    cy.contains('Login').should('be.visible');
   });
 });

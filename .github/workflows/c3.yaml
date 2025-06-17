@@ -26,7 +26,6 @@ jobs:
         with:
           node-version: 18
 
-      # ✅ Cache das dependências NPM
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -38,17 +37,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # ✅ Cypress Info (opcional)
       - name: Cypress info
         run: npx cypress info
 
-      # ✅ Execução dos testes Cypress
       - name: Run Cypress tests on ${{ matrix.browser }}
         uses: cypress-io/github-action@v6
         with:
           browser: ${{ matrix.browser }}
 
-      # ✅ Publicação de relatório de testes (JUnit)
       - name: Upload Cypress JUnit Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,7 +53,6 @@ jobs:
           path: cypress/results
           if-no-files-found: ignore
 
-      # ✅ Upload de evidências de falha (screenshots e vídeos)
       - name: Upload Cypress screenshots (on failure)
         if: failure()
         uses: actions/upload-artifact@v4
@@ -74,7 +69,6 @@ jobs:
           path: cypress/videos
           if-no-files-found: ignore
 
-      # ✅ Notificação Slack (opcional - só funciona se configurar o secret do webhook)
       - name: Slack notification on failure
         if: failure()
         uses: slackapi/slack-github-action@v1.24.0
