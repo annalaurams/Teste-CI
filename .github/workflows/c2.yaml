@@ -1,0 +1,49 @@
+name: Cypress End-to-End - Maia V2
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - ci-cypress
+  pull_request:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        browser: [chrome, firefox, edge]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests (V2 spec)
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ matrix.browser }}
+
+      - name: Upload Cypress screenshots (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Upload Cypress videos (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
