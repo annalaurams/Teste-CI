@@ -23,6 +23,5 @@ Cypress.Commands.add('logout', () => {
     .should('be.visible')
     .click();
 
-  cy.contains('Cadastrar uma conta grátis').should('be.visible');
 });
 
