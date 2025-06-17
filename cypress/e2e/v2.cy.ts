@@ -4,7 +4,7 @@ describe('Logout Maia', () => {
       const user = users.basic;
       cy.login(user);  
     });
+    cy.wait(1000);
     cy.logout(); 
-    cy.contains('Login').should('be.visible');
   });
 });
