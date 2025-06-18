@@ -7,5 +7,11 @@ module.exports = defineConfig({
       // configuração de eventos, se precisar
     },
   },
-});
 
+  reporter: 'junit',
+
+  reporterOptions: {
+    mochaFile: 'cypress/results/results-[hash].xml',  // Local onde os relatórios JUnit serão salvos
+    toConsole: true,  // Opcional: mostra o resultado no console
+  },
+});
