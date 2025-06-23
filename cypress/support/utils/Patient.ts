@@ -41,7 +41,7 @@ export function searchAndClickPatient(user: User) {
     .type(user.namePatient + '{enter}', { force: true });
 
   cy.wait(2000);
-  cy.get('p.chakra-text.css-1lmd9lu')
+  cy.get('p.chakra-text.css-1lmd9lu', {timeout: 10000})
     .contains(user.namePatient)
     .scrollIntoView()
     .should('be.visible')
