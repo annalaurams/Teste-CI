@@ -45,14 +45,6 @@ jobs:
         with:
           browser: ${{ matrix.browser }}
 
-      - name: Upload Cypress JUnit Report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-junit-report-${{ matrix.browser }}
-          path: cypress/results
-          if-no-files-found: ignore
-
       - name: Upload Cypress screenshots (on failure)
         if: failure()
         uses: actions/upload-artifact@v4
