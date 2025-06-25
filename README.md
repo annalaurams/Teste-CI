@@ -14,11 +14,11 @@
   - [3.5 Imagens](#35-imagens)
 - [4. Funções Utilitárias Reaproveitáveis (Utils)](#4-funções-utilitárias-reaproveitáveis-utils)
 - [5. Casos de Teste](#5-casos-de-teste)
-  - [51-sign-up](#51-sign-up)
-  - [52-questionnaire](#52-questionnaire)
-  - [53-medical-record](#53-medical-record)
-  - [54-home](#54-home)
-  - [55-account](#55-account)
+  - [5.1-sign-up](#51-sign-up)
+  - [5.2-questionnaire](#52-questionnaire)
+  - [5.3-medical-record](#53-medical-record)
+  - [5.4-home](#54-home)
+  - [5.5-account](#55-account)
 
 ## 1. Visão Geral
 
